@@ -1,0 +1,406 @@
+use instituto
+db.createCollection("profesores")
+db.createCollection("estudiantes")
+db.createCollection("cursos")
+db.createCollection("profesoresCurso")
+db.createCollection("estudiantesCurso")
+db.profesores.insertMany([
+	{
+	  "nombre":"Brayan",
+	  "apellido":"Zanabria",
+	  "correo":"brayanzanabria0@gmail.com",
+	  "documento":"1001118137",
+	},
+	{
+	  "nombre":"Mateo",
+	  "apellido":"Davila",
+	  "correo":"mateodavila@gmail.com",
+	  "documento":"1001117134",
+	},
+	{
+	  "nombre":"Santiago",
+	  "apellido":"Uranga",
+	  "correo":"santiagouranga@gmail.com",
+	  "documento":"1001124567"
+	},
+	{
+	  "nombre":"Milena",
+	  "apellido":"Lopez",
+	  "correo":"milenalopez@gmail.com",
+	  "documento":"1004879465",
+	},
+	{
+	  "nombre":"Jhoan",
+	  "apellido":"Quiroga",
+	  "correo":"jhoanquiroga@gmail.com",
+	  "documento":"1004598745",
+	}
+	])
+
+
+db.estudiantes.insertMany([
+	{
+	  "nombre":"jose",
+	  "apellido":"pelaez",
+	  "correo":"josepelaez@gmail.com",
+	  "documento":"1047857496",
+	},
+	{
+	  "nombre":"Mariana",
+	  "apellido":"pelaez",
+	  "correo":"marianapelaez@gmail.com",
+	  "documento":"1458974512",
+	},
+	{
+	  "nombre":"Jocelito",
+	  "apellido":"pelaez",
+	  "correo":"jocelitopelaez@gmail.com",
+	  "documento":"1004578596",
+	},
+	{
+	  "nombre":"Manuel",
+	  "apellido":"pelaez",
+	  "correo":"manuel@gmail.com",
+	  "documento":"1005789745",
+	},
+	{
+	  "nombre":"Alfonzo",
+	  "apellido":"pelaez",
+	  "correo":"Alfonzopelaez@gmail.com",
+	  "documento":"1004778596",
+	},
+	{
+	  "nombre":"Grabiela",
+	  "apellido":"pelaez",
+	  "correo":"grabielapelaez@gmail.com",
+	  "documento":"1002878596",
+	},
+	{
+	  "nombre":"julian",
+	  "apellido":"pelaez",
+	  "correo":"julianpelaez@gmail.com",
+	  "documento":"1004578596",
+	},
+	{
+	  "nombre":"Marcelita",
+	  "apellido":"pelaez",
+	  "correo":"marcelitapelaez@gmail.com",
+	  "documento":"1007478596",
+	},
+	{
+	  "nombre":"Milena",
+	  "apellido":"pelaez",
+	  "correo":"milenapelaez@gmail.com",
+	  "documento":"1004578596",
+	},
+	{
+	  "nombre":"Maritza",
+	  "apellido":"pelaez",
+	  "correo":"maritzapelaez@gmail.com",
+	  "documento":"1004578596",
+	},
+	{
+	  "nombre":"jaul",
+	  "apellido":"pelaez",
+	  "correo":"jaulpelaez@gmail.com",
+	  "documento":"1004178596",
+	},
+	{
+	  "nombre":"Setch",
+	  "apellido":"pelaez",
+	  "correo":"setchpelaez@gmail.com",
+	  "documento":"1006278596",
+	},
+	{
+	  "nombre":"lopi",
+	  "apellido":"pelaez",
+	  "correo":"lopipelaez@gmail.com",
+	  "documento":"1008378596",
+	},
+	{
+	  "nombre":"Felipe",
+	  "apellido":"pelaez",
+	  "correo":"felipepelaez@gmail.com",
+	  "documento":"1004578596",
+	},
+	{
+	  "nombre":"Brayan",
+	  "apellido":"Zanabria",
+	  "correo":"brayanzanabria0@gmail.com",
+	  "documento":"1001118137",
+	},
+	{
+	  "nombre":"Mateo",
+	  "apellido":"Davila",
+	  "correo":"mateodavila@gmail.com",
+	  "documento":"1001117134",
+	},
+	{
+	  "nombre":"Santiago",
+	  "apellido":"Uranga",
+	  "correo":"santiagouranga@gmail.com",
+	  "documento":"1001124567",
+	},
+	{
+	  "nombre":"Milena",
+	  "apellido":"Lopez",
+	  "correo":"milenalopez@gmail.com",
+	  "documento":"1004879465",
+	},
+	{
+	  "nombre":"nelson",
+	  "apellido":"Lopez",
+	  "correo":"nelsonlopez@gmail.com",
+	  "documento":"1004879465",
+	},
+	{
+	  "nombre":"Jhoan",
+	  "apellido":"Quiroga",
+	  "correo":"jhoanquiroga@gmail.com",
+	  "documento":"1004598745",
+	}
+])
+
+
+
+db.cursos.insertMany([
+	{
+	  "nombre":"Los Champetones",
+	  "creditos":"11-a",
+	},
+	{
+	  "nombre":"Los Capos",
+	  "creditos":"11-b", 
+	},
+	{
+	  "nombre":"Los Ftb",
+	  "creditos":"11-c",	 
+	},
+	{
+	  "nombre":"Los inreibles",
+	  "creditos":"10-a",	 
+	},
+	{
+	  "nombre":"Los Never",
+	  "creditos":"10-b",	 
+	},
+	{
+	  "nombre":"Los Simpsom",
+	  "creditos":"10-c",	 
+	},
+	{
+	  "nombre":"Los Amagadores",
+	  "creditos":"9-a",	 
+	},
+	{
+	  "nombre":"los Runel",
+	  "creditos":"9-b",	 
+	},
+]
+)
+
+db.profesoresCurso.insertMany([
+	{
+	  "profesor": new ObjectId("5fac4971a2f0fdb340971dcf"),
+	  "curso": new ObjectId("5fac4d55a2f0fdb340971de9"),
+	},
+	{
+	  "profesor": new ObjectId("5fac4971a2f0fdb340971dd0"),
+	  "curso": new ObjectId("5fac4d55a2f0fdb340971dea"),
+	},
+	{
+	  "profesor": new ObjectId("5fac4971a2f0fdb340971dd1"),
+	  "curso": new ObjectId("5fac4d55a2f0fdb340971deb"),
+	},	
+	{
+	  "profesor": new ObjectId("5fac4971a2f0fdb340971dd2"),
+	  "curso": new ObjectId("5fac4d55a2f0fdb340971dec"),
+	},
+	{
+	  "profesor": new ObjectId("5fac4971a2f0fdb340971dd3"),
+	  "curso": new ObjectId("5fac4d55a2f0fdb340971ded"),
+	},
+	{
+	  "profesor": new ObjectId("5fac4971a2f0fdb340971dcf"),
+	  "curso": new ObjectId("5fac4d55a2f0fdb340971dee"),
+	},
+	{
+	  "profesor": new ObjectId("5fac4971a2f0fdb340971dd0"),
+	  "curso": new ObjectId("5fac4d55a2f0fdb340971def"),
+	},
+	{
+	  "profesor": new ObjectId("5fac4971a2f0fdb340971dd1"),
+	  "curso": new ObjectId("5fac4d55a2f0fdb340971df0"),
+	},
+])
+
+db.estudiantesCurso.insertMany([
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971dd5"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971de9"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971dd6"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971dea"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971dd7"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971deb"),
+	},
+	{
+	 "estudiante": new ObjectId("5fac4c86a2f0fdb340971dd8"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971dec"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971dd9"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971ded"),
+	},
+	{
+	 "estudiante": new ObjectId("5fac4c86a2f0fdb340971dda"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971dee"),
+	},
+	{
+	 "estudiante": new ObjectId("5fac4c86a2f0fdb340971ddb"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971def"),
+	},
+	{
+	 "estudiante": new ObjectId("5fac4c86a2f0fdb340971ddc"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971df0"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971ddd"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971df0"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971dde"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971def"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971ddf"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971dee"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971de0"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971ded"),
+	},
+	{
+	 "estudiante": new ObjectId("5fac4c86a2f0fdb340971de1"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971dec"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971de2"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971deb"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971de3"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971dea"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971de4"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971de9"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971de5"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971dee"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971de6"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971df0"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971de7"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971deb"),
+	},
+	{
+	  "estudiante": new ObjectId("5fac4c86a2f0fdb340971de8"),
+	  "Curso": new ObjectId("5fac4d55a2f0fdb340971df0"),
+	}
+])
+
+db.profesores.find().pretty();
+db.estudiantes.find().pretty();
+db.cursos.find().pretty();
+
+
+db.profesores.aggregate(
+[
+	{
+	   $match:{
+		     _id : ObjectId("5fac4971a2f0fdb340971dd1"),
+		  },		 
+	},
+	{
+	  $lookup:{
+		     from:'profesoresCurso',
+		     localField:'_id',
+		     foreignField:'profesor',
+		     as:'cursosProfesor'
+		  }
+	},
+	
+	{
+	 	$unwind:'$cursosProfesor'
+	},
+	{
+		$project:{
+			   nombreProfesor:'$nombre',
+			   apellidoProfesor:'$apellido',
+			   correoProfesor:'$correo"',
+			   documentoProfesor:'$documento',
+			   ElProfesor:'$cursosProfesor.profesor',
+			   SusCursos:'$cursosProfesor.curso'
+			 }
+	},
+	
+]
+).pretty()
+
+
+db.cursos.aggregate([
+
+	{
+	  $match:{
+		     _id : ObjectId("5fac4d55a2f0fdb340971de9"),
+		 },
+	},
+	{
+	  $lookup:{
+		     from:'estudiantesCurso',
+		     localField:'_id',
+		     foreignField:'Curso',
+		     as:'estudiantesCurso'
+		  }
+	},
+	{
+	 	$unwind:'$estudiantesCurso'
+	},
+	{
+		$project:{
+			   NombreCurso:'$nombre',
+			   CreditosCurso:'$creditos',
+			   ElEstudiante:'$estudiantesCurso.estudiante',
+			   PertenecenALCurso:'$estudiantesCurso.Curso'
+			 }
+	},
+
+]).pretty()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
